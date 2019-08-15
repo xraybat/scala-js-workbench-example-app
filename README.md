@@ -1,8 +1,8 @@
 # Example Scala.js application 
 
-(**clone of lihaoyi's https://github.com/lihaoyi/workbench for local experimentation, see http://www.lihaoyi.com/hands-on-scala-js/
+(**clone of lihaoyi's https://github.com/lihaoyi/workbench for local experimentation, see http://www.lihaoyi.com/hands-on-scala-js/**
 
-have upgraded various version nos. of components, scala, sbt.**)
+**have upgraded various version nos. of components, scala, sbt.**)
 
 This is a slightly less barebone example of an application written in
 [Scala.js](http://www.scala-js.org/). In particular, it links

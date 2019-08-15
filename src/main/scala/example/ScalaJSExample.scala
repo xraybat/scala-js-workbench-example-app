@@ -1,5 +1,6 @@
 // clone of lihaoyi's https://github.com/lihaoyi/workbench for local experimentation, see http://www.lihaoyi.com/hands-on-scala-js/
-// have upgraded various version nos. on components, scala, sbt.
+//
+// have upgraded various version nos. of components, scala, sbt.
 
 package example
 

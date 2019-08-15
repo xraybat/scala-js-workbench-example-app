@@ -1,4 +1,8 @@
+// clone of lihaoyi's https://github.com/lihaoyi/workbench for local experimentation, see http://www.lihaoyi.com/hands-on-scala-js/
+// have upgraded various version nos. on components, scala, sbt.
+
 package example
+
 import scala.scalajs.js.annotation.JSExport
 import org.scalajs.dom
 import org.scalajs.dom.html
@@ -37,8 +41,10 @@ object ScalaJSExample {
       ctx.fillStyle = s"rgb($g, $r, $b)"
 
       ctx.fillRect(p.x, p.y, 1, 1)
-    }
+
+    } // run
 
     dom.window.setInterval(() => run, 50)
-  }
-}
+
+  } // main
+} // ScalaJSExample

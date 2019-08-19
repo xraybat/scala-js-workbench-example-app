@@ -10,7 +10,7 @@ import org.scalajs.dom.html
 import scala.util.Random
 
 @JSExport
-object ScalaJSExample extends {
+object HelloWorld0 extends {
   @JSExport
   def main(target: html.Div): Unit = {
     println("main...")
@@ -26,4 +26,4 @@ object ScalaJSExample extends {
         </div>
         """
   } // main
-} // ScalaJSExample
+} // HelloWorld0

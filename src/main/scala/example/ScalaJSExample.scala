@@ -14,7 +14,7 @@ import scalatags.JsDom.all._
 object HelloWorld1 extends {
   @JSExport
   def main(target: html.Div): Unit = {
-    println("main...")
+    println("main...helloworld1...")
 
     val (animalA, animalB) = ("fox", "dog")
     target.appendChild(

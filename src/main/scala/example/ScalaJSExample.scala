@@ -18,9 +18,12 @@ object HelloWorld1 extends {
 
     val (animalA, animalB) = ("fox", "dog")
     target.appendChild(
-      div(h1("Hello World!"),
+      div(
+        h1("Hello World!"),
         p("The quick brown ", b(animalA),
-          " jumps over the lazy ", i(animalB), ".")).render)
+          " jumps over the lazy ", i(animalB), ".")
+      ).render
+    )
 
   } // main
 } // HelloWorld1

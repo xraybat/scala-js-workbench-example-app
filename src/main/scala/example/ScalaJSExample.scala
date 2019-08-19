@@ -30,7 +30,7 @@ object RerenderList extends {
         )
       } yield li(fruit)
     ).render*/
-    
+
     // with highlighting
     def renderListings = ul(
       for {
@@ -42,13 +42,7 @@ object RerenderList extends {
         val (first, last) = fruit.splitAt(
           box.value.length
         )
-        li(
-          span(
-            backgroundColor:="yellow",
-            first
-          ),
-          last
-        )
+        li(span(backgroundColor:="yellow", first), last)
       }
     ).render
 
@@ -67,9 +61,7 @@ object RerenderList extends {
     target.appendChild(
       div(
         h1("search box!"),
-        p(
-          "type here to filter the list of things below!"
-        ),
+        p("type here to filter the list of things below!"),
         div(box),
         output
       ).render

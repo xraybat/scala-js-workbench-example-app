@@ -8,22 +8,19 @@ import scala.scalajs.js.annotation.JSExport
 import org.scalajs.dom
 import org.scalajs.dom.html
 import scala.util.Random
+import scalatags.JsDom.all._
 
 @JSExport
-object ScalaJSExample extends {
+object HelloWorld1 extends {
   @JSExport
   def main(target: html.Div): Unit = {
     println("main...")
-    
-    val (f, d) = ("fox", "dog")
-        target.innerHTML = s"""
-        <div>
-          <h1>Hello World!</h1>
-          <p>
-            The quick brown <b>$f</b>
-            jumps over the lazy <i>$d</b>
-          </p>
-        </div>
-        """
+
+    val (animalA, animalB) = ("fox", "dog")
+    target.appendChild(
+      div(h1("Hello World!"),
+        p("The quick brown ", b(animalA),
+          " jumps over the lazy ", i(animalB), ".")).render)
+
   } // main
-} // ScalaJSExample
+} // HelloWorld1

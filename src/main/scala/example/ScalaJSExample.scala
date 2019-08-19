@@ -11,19 +11,29 @@ import scala.util.Random
 import scalatags.JsDom.all._
 
 @JSExport
-object HelloWorld1 extends {
+object UserInput0 extends {
   @JSExport
   def main(target: html.Div): Unit = {
-    println("main...helloworld1...")
+    println("main...userinput0...")
 
-    val (animalA, animalB) = ("fox", "dog")
+    val box = input(
+      `type` := "text",
+      placeholder :=  "Type here!"
+    ).render
+
+    val output = span.render
+
+    box.onkeyup = (e: dom.Event) => {
+      output.textContent = box.value.toUpperCase
+    }
+
     target.appendChild(
       div(
-        h1("Hello World!"),
-        p("The quick brown ", b(animalA),
-          " jumps over the lazy ", i(animalB), ".")
+        h1("capital box!"),
+        p("type here and have it capitalized!"),
+        div(box),
+        div(output)
       ).render
     )
-
   } // main
-} // HelloWorld1
+} // UserInput0

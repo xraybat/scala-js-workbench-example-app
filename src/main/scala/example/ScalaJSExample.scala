@@ -13,7 +13,7 @@ import scala.util.Random
 object HelloWorld0 extends {
   @JSExport
   def main(target: html.Div): Unit = {
-    println("main...")
+    println("main...helloworld0...")
     
     val (f, d) = ("fox", "dog")
         target.innerHTML = s"""

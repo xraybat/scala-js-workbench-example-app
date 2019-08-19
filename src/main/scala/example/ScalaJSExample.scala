@@ -24,6 +24,5 @@ object HelloWorld1 extends {
           " jumps over the lazy ", i(animalB), ".")
       ).render
     )
-
   } // main
 } // HelloWorld1

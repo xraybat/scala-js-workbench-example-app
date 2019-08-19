@@ -11,29 +11,68 @@ import scala.util.Random
 import scalatags.JsDom.all._
 
 @JSExport
-object UserInput0 extends {
+object RerenderList extends {
   @JSExport
   def main(target: html.Div): Unit = {
-    println("main...userinput0...")
+    println("main...rerender-list...")
 
-    val box = input(
-      `type` := "text",
-      placeholder :=  "Type here!"
+    val listings = Seq(
+      "Apple", "Apricot", "Banana", "Cherry",
+      "Mango", "Mangosteen", "Mandarin",
+      "Grape", "Grapefruit", "Guava"
+    )
+
+    /*def renderListings = ul(
+      for {
+        fruit <- listings
+        if fruit.toLowerCase.startsWith(
+          box.value.toLowerCase
+        )
+      } yield li(fruit)
+    ).render*/
+    
+    // with highlighting
+    def renderListings = ul(
+      for {
+        fruit <- listings
+        if fruit.toLowerCase.startsWith(
+          box.value.toLowerCase
+        )
+      } yield {
+        val (first, last) = fruit.splitAt(
+          box.value.length
+        )
+        li(
+          span(
+            backgroundColor:="yellow",
+            first
+          ),
+          last
+        )
+      }
     ).render
 
-    val output = span.render
+    lazy val box = input(
+      `type` := "text",
+      placeholder := "type here!"
+    ).render
+
+    val output = div(renderListings).render
 
     box.onkeyup = (e: dom.Event) => {
-      output.textContent = box.value.toUpperCase
+      output.innerHTML = ""
+      output.appendChild(renderListings)
     }
 
     target.appendChild(
       div(
-        h1("capital box!"),
-        p("type here and have it capitalized!"),
+        h1("search box!"),
+        p(
+          "type here to filter the list of things below!"
+        ),
         div(box),
-        div(output)
+        output
       ).render
     )
   } // main
-} // UserInput0
+} // RerenderList

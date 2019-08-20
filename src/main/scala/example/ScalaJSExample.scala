@@ -11,7 +11,7 @@ import scala.util.Random
 import scalatags.JsDom.all._
 
 @JSExport
-object HelloWorld1 extends {
+object PlayExperiment extends {
   @JSExport
   def main(target: html.Div): Unit = {
     println("main...helloworld1...")
@@ -25,4 +25,4 @@ object HelloWorld1 extends {
       ).render
     )
   } // main
-} // HelloWorld1
+} // PlayExperiment

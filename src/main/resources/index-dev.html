@@ -1,20 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Example Scala.js application</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-</head>
-<body style="margin: 0px">
+  <head>
+    <title>Example Scala.js application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  </head>
 
-<section id="content">
-  <div id="div">
-  </div>
-</section>
+  <body style="margin: 0px">
+    <section id="content">
+      <article>
+        <h2>Welcome to the Scala.js Meets Play Framework Tutorial!</h2>
+        <p>This tutorial tries to connect the Play Framework to a Scala.js front-end.</p>
+        <p>Scala.js-able &#60;div&#62; following:</p>
 
-<script type="text/javascript" src="../example-fastopt.js"></script>
-<script type="text/javascript" src="/workbench.js"></script>
-<script>
-    example.PlayExperiment().main(document.getElementById('div'));
-</script>
-</body>
+        <div id="div-play-experiment" style="border:1px solid black;">
+        </div>
+        <div>
+          <h3 id="next-steps">Next steps:</h3>
+          <p>Now, let's <a href="@routes.HomeController.explore">explore the tutorial Play application</a>.</p>
+        </div>
+    </article>
+      <aside>
+      </aside>
+    </section>
+
+    <script type="text/javascript" src="../example-fastopt.js"></script>
+    <script type="text/javascript" src="/workbench.js"></script>
+    <script>
+      example.PlayExperiment().main(document.getElementById('div-play-experiment'));
+    </script>
+  </body>
 </html>
